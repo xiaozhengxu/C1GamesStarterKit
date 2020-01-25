@@ -47,6 +47,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         OPPONENTINDEX = 1
         # This is a good place to do initial setup
         self.scored_on_locations = []
+        self.enemy_unit_death_locations = []
 
 
     def on_turn(self, turn_state):
@@ -61,21 +62,32 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write('Performing turn {} of your custom algo strategy'.format(game_state.turn_number))
         game_state.suppress_warnings(True)  #Comment or remove this line to enable warnings.
 
-        self.build_defences([3, 4, 10, 17, 23, 24], DESTRUCTOR, game_state, row=10)
+        launch_pos = [4, 9]
+        self.build_defences([3, 4, 10, 17, 23, 24], DESTRUCTOR, game_state, row=11)
 
-
+        for location in self.scored_on_locations:
+            # Build destructor one space above so that it doesn't block our own edge spawn locations
+            if location[0] >= 14:
+                build_location = [location[0] - 2, location[1]+2]
+            else:
+                build_location = [location[0] + 2, location[1]+2]
+            game_state.attempt_spawn(DESTRUCTOR, build_location)
 
         if game_state.turn_number >= 2:
             filter_row = self.get_enemy_front_row(game_state, DESTRUCTOR) - 3
             if filter_row <= 13:
                 filter_locations = [i for i in range(13 - filter_row, 23 - (13 - filter_row) * 2)]
-                self.build_defences(filter_locations, FILTER, game_state, filter_row)
-                game_state.attempt_spawn(EMP, [[4, 9]], 2)
+                if game_state.get_resources(0)[0] > len(filter_locations):
+                    self.build_defences(filter_locations, FILTER, game_state, filter_row)
+                    game_state.attempt_spawn(EMP, [launch_pos], 2)
             else:
                 # print("check ", game_state.get_resources(0)[0])
                 if game_state.get_resources(0)[0] > 6:
-                    game_state.attempt_spawn(PING, [[4, 9]], 15)
+                    game_state.attempt_spawn(PING, [launch_pos], 15)
 
+        if game_state.turn_number >= 4 and game_state.get_resources(0)[1] > 0:
+            encrpytor_locations = [[launch_pos[0] + 1 + k, launch_pos[1] - 1] for k in range(3)]
+            game_state.attempt_spawn(ENCRYPTOR, encrpytor_locations)
         game_state.submit_turn()
 
 
@@ -257,9 +269,19 @@ class AlgoStrategy(gamelib.AlgoCore):
             # When parsing the frame data directly,
             # 1 is integer for yourself, 2 is opponent (StarterKit code uses 0, 1 as player_index instead)
             if not unit_owner_self:
-                gamelib.debug_write("Got scored on at: {}".format(location))
+                # gamelib.debug_write("Got scored on at: {}".format(location))
                 self.scored_on_locations.append(location)
-                gamelib.debug_write("All locations: {}".format(self.scored_on_locations))
+                # gamelib.debug_write("All locations: {}".format(self.scored_on_locations))
+        for death in deaths:
+            # print("death: ", death)
+            location = death[0]
+            unit_owner_self = True if death[3] == 1 else False
+            # When parsing the frame data directly,
+            # 1 is integer for yourself, 2 is opponent (StarterKit code uses 0, 1 as player_index instead)
+            if not unit_owner_self:
+                # gamelib.debug_write("Enemy unit died at: {}".format(location))
+                self.enemy_unit_death_locations.append(location)
+                # gamelib.debug_write("All locations: {}".format(self.scored_on_locations))
 
 
 if __name__ == "__main__":

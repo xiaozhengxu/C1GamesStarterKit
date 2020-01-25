@@ -1,0 +1,150 @@
+Random seed: 5252933086576851724
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Performing turn 1 of your custom algo strategy
+Performing turn 2 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [17, 12]
+Enemy unit died at: [16, 12]
+Enemy unit died at: [10, 17]
+Enemy unit died at: [13, 9]
+Enemy unit died at: [12, 8]
+Enemy unit died at: [11, 7]
+Got scored on at: [9, 4]
+All locations: [[9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4]]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Performing turn 3 of your custom algo strategy
+Performing turn 4 of your custom algo strategy
+Performing turn 5 of your custom algo strategy
+Performing turn 6 of your custom algo strategy
+Performing turn 7 of your custom algo strategy
+Performing turn 8 of your custom algo strategy
+Performing turn 9 of your custom algo strategy
+Performing turn 10 of your custom algo strategy
+Performing turn 11 of your custom algo strategy
+Performing turn 12 of your custom algo strategy
+Performing turn 13 of your custom algo strategy
+Performing turn 14 of your custom algo strategy
+Performing turn 15 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [17, 12]
+Enemy unit died at: [16, 12]
+Enemy unit died at: [16, 11]
+Performing turn 16 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [17, 12]
+Enemy unit died at: [10, 17]
+Enemy unit died at: [13, 9]
+Enemy unit died at: [12, 8]
+Enemy unit died at: [11, 7]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Performing turn 17 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [17, 12]
+Enemy unit died at: [16, 12]
+Enemy unit died at: [10, 17]
+Enemy unit died at: [13, 9]
+Enemy unit died at: [17, 17]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Performing turn 18 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [17, 12]
+Enemy unit died at: [16, 12]
+Enemy unit died at: [16, 11]
+Enemy unit died at: [15, 11]
+Enemy unit died at: [15, 10]
+Enemy unit died at: [14, 10]
+Performing turn 19 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [10, 17]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Performing turn 20 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [17, 12]
+Enemy unit died at: [16, 12]
+Enemy unit died at: [16, 11]
+Enemy unit died at: [15, 11]
+Enemy unit died at: [15, 10]
+Performing turn 21 of your custom algo strategy
+Enemy unit died at: [18, 13]
+Enemy unit died at: [17, 13]
+Enemy unit died at: [10, 17]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Got scored on at: [9, 4]
+All locations: [[9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4]]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Enemy unit died at: [9, 4]
+Performing turn 22 of your custom algo strategy
+Traceback (most recent call last):
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 278, in <module>
+    algo.start()
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/algocore.py", line 59, in start
+    game_state_string = get_command()
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/util.py", line 12, in get_command
+    ret = sys.stdin.readline()
+KeyboardInterrupt
