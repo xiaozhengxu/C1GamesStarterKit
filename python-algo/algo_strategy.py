@@ -19,6 +19,8 @@ Advanced strategy tips:
   the actual current map state.
 """
 
+
+
 class AlgoStrategy(gamelib.AlgoCore):
     def __init__(self):
         super().__init__()
@@ -32,7 +34,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         """
         gamelib.debug_write('Configuring your custom algo strategy...')
         self.config = config
-        global FILTER, ENCRYPTOR, DESTRUCTOR, PING, EMP, SCRAMBLER, BITS, CORES
+        global FILTER, ENCRYPTOR, DESTRUCTOR, PING, EMP, SCRAMBLER, BITS, CORES, PLAYERINDEX, OPPONENTINDEX
         FILTER = config["unitInformation"][0]["shorthand"]
         ENCRYPTOR = config["unitInformation"][1]["shorthand"]
         DESTRUCTOR = config["unitInformation"][2]["shorthand"]
@@ -41,6 +43,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         SCRAMBLER = config["unitInformation"][5]["shorthand"]
         BITS = 1
         CORES = 0
+        PLAYERINDEX = 0
+        OPPONENTINDEX = 1
         # This is a good place to do initial setup
         self.scored_on_locations = []
 
@@ -57,7 +61,20 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write('Performing turn {} of your custom algo strategy'.format(game_state.turn_number))
         game_state.suppress_warnings(True)  #Comment or remove this line to enable warnings.
 
-        self.starter_strategy(game_state)
+        self.build_defences([3, 4, 10, 17, 23, 24], DESTRUCTOR, game_state, row=10)
+
+
+
+        if game_state.turn_number >= 2:
+            filter_row = self.get_enemy_front_row(game_state, DESTRUCTOR) - 3
+            if filter_row <= 13:
+                filter_locations = [i for i in range(13 - filter_row, 23 - (13 - filter_row) * 2)]
+                self.build_defences(filter_locations, FILTER, game_state, filter_row)
+                game_state.attempt_spawn(EMP, [[4, 9]], 2)
+            else:
+                # print("check ", game_state.get_resources(0)[0])
+                if game_state.get_resources(0)[0] > 6:
+                    game_state.attempt_spawn(PING, [[4, 9]], 15)
 
         game_state.submit_turn()
 
@@ -111,7 +128,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             game_state.attempt_spawn(EMP, [4, 9], 10)
 
     def get_enemy_front_row(self, game_state, unit_type = None):
-        front_row = 16
+        front_row = 17
         for row in range(14, 16):
             for col in range(3 + row-14, 27 - 3 - (row-14)):
                 if game_state.contains_stationary_unit([col, row]):
@@ -233,6 +250,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         state = json.loads(turn_string)
         events = state["events"]
         breaches = events["breach"]
+        deaths = events["death"]
         for breach in breaches:
             location = breach[0]
             unit_owner_self = True if breach[4] == 1 else False
