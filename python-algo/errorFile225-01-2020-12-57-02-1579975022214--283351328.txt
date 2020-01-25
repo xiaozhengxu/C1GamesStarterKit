@@ -1,0 +1,11 @@
+Random seed: 8334221770550485768
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Traceback (most recent call last):
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 297, in <module>
+    algo.start()
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/algocore.py", line 65, in start
+    self.on_game_start(parsed_config)
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 53, in on_game_start
+    f = open("weights.txt", "r")
+FileNotFoundError: [Errno 2] No such file or directory: 'weights.txt'

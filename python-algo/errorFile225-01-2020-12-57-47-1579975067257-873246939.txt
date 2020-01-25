@@ -1,0 +1,11 @@
+Random seed: 3623414386284075759
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Traceback (most recent call last):
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 297, in <module>
+    algo.start()
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/algocore.py", line 65, in start
+    self.on_game_start(parsed_config)
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 54, in on_game_start
+    line = f.readline()
+NameError: name 'f' is not defined

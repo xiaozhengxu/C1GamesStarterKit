@@ -1,0 +1,75 @@
+Random seed: 6540683623674213082
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 1 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 2 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 3 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 4 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 5 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 6 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 7 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 8 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 9 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 10 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 11 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 12 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 13 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 14 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Performing turn 15 of your custom algo strategy
+launchs pos are [[0, 13], [1, 12], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7], [7, 6], [8, 5], [9, 4], [10, 3], [11, 2], [12, 1], [13, 0], (14, 0), (15, 1), (16, 2), (17, 3), (18, 4), (19, 5), (20, 6), (21, 7), (22, 8), (23, 9), (24, 10), (25, 11), (26, 12)]
+Trying to launch at (15, 1)
+spawned 0 at launch_pos (15, 1)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 314, in <module>
+    algo.start()
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/algocore.py", line 59, in start
+    game_state_string = get_command()
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/util.py", line 12, in get_command
+    ret = sys.stdin.readline()
+KeyboardInterrupt

@@ -1,4 +1,4 @@
-Random seed: 3599779560461246451
+Random seed: 5302318022348272020
 ---------------- Starting Your Algo --------------------
 Configuring your custom algo strategy...
 Performing turn 0 of your custom algo strategy
@@ -10,8 +10,16 @@ Performing turn 5 of your custom algo strategy
 Performing turn 6 of your custom algo strategy
 Performing turn 7 of your custom algo strategy
 Performing turn 8 of your custom algo strategy
+Performing turn 9 of your custom algo strategy
+Performing turn 10 of your custom algo strategy
+Performing turn 11 of your custom algo strategy
+Performing turn 12 of your custom algo strategy
+Performing turn 13 of your custom algo strategy
+Performing turn 14 of your custom algo strategy
+Performing turn 15 of your custom algo strategy
+Performing turn 16 of your custom algo strategy
 Traceback (most recent call last):
-  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 263, in <module>
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 302, in <module>
     algo.start()
   File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/gamelib/algocore.py", line 59, in start
     game_state_string = get_command()

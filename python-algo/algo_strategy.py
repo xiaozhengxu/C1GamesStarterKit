@@ -4,7 +4,7 @@ import math
 import warnings
 from sys import maxsize
 import json
-
+import os
 
 """
 Most of the algo code you write will be in this file unless you create new
@@ -48,6 +48,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         # This is a good place to do initial setup
         self.scored_on_locations = []
         self.enemy_unit_death_locations = []
+        # self.launch
+        # print("i am currrently in", os.getcwd())
+        f = open("weights.txt", "r")
+        line = f.readline()
+        self.weights = list(map(float, line.split(" ")))
 
 
     def on_turn(self, turn_state):
@@ -62,32 +67,52 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write('Performing turn {} of your custom algo strategy'.format(game_state.turn_number))
         game_state.suppress_warnings(True)  #Comment or remove this line to enable warnings.
 
-        launch_pos = [4, 9]
-        self.build_defences([3, 4, 10, 17, 23, 24], DESTRUCTOR, game_state, row=11)
+        # launch_pos = [4, 9]
 
-        for location in self.scored_on_locations:
-            # Build destructor one space above so that it doesn't block our own edge spawn locations
-            if location[0] >= 14:
-                build_location = [location[0] - 2, location[1]+2]
-            else:
-                build_location = [location[0] + 2, location[1]+2]
-            game_state.attempt_spawn(DESTRUCTOR, build_location)
+        # num_start_destructors = int(self.weights[0] * 10)
+        # self.build_defences([random.randint(3, 24) for i in range(num_start_destructors)], DESTRUCTOR, game_state, row=10)
 
-        if game_state.turn_number >= 2:
-            filter_row = self.get_enemy_front_row(game_state, DESTRUCTOR) - 3
-            if filter_row <= 13:
-                filter_locations = [i for i in range(13 - filter_row, 23 - (13 - filter_row) * 2)]
-                if game_state.get_resources(0)[0] > len(filter_locations):
-                    self.build_defences(filter_locations, FILTER, game_state, filter_row)
-                    game_state.attempt_spawn(EMP, [launch_pos], 2)
-            else:
-                # print("check ", game_state.get_resources(0)[0])
-                if game_state.get_resources(0)[0] > 6:
-                    game_state.attempt_spawn(PING, [launch_pos], 15)
+        num_launch_pos = 28
 
-        if game_state.turn_number >= 4 and game_state.get_resources(0)[1] > 0:
-            encrpytor_locations = [[launch_pos[0] + 1 + k, launch_pos[1] - 1] for k in range(3)]
-            game_state.attempt_spawn(ENCRYPTOR, encrpytor_locations)
+        num_pos = int(self.weights[1] * num_launch_pos)
+        edge_locs = [[[i, 13 - i]] for i in range(14)] + [[[i, i - 14]] for i in range(14, 27)]
+        # gamelib.debug_write("There are {} launch_pos".format(len(edge_locs)))
+        gamelib.debug_write("launchs pos are {}".format(edge_locs))
+        launch_pos = edge_locs[num_pos]
+
+        # print("launch_pos is ", launch_pos)
+        gamelib.debug_write("Trying to launch at {}".format(launch_pos))
+        # if game_state.get_resources(0)[0] > 0:
+        num_spawned = game_state.attempt_spawn(PING, launch_pos, 30)
+        gamelib.debug_write("spawned {} at launch_pos {} ".format(num_spawned, launch_pos))
+
+
+        # for location in self.scored_on_locations:
+        #     # Build destructor one space above so that it doesn't block our own edge spawn locations
+        #     if location[0] >= 14:
+        #         build_location = [location[0] - 2, location[1]+2]
+        #     else:
+        #         build_location = [location[0] + 2, location[1]+2]
+        #
+        #
+        #     game_state.attempt_spawn(DESTRUCTOR, build_location)
+        #     game_state.attempt_spawn(SCRAMBLER, location)
+        #
+        # if game_state.turn_number >= 2:
+        #     filter_row = self.get_enemy_front_row(game_state, DESTRUCTOR) - 3
+        #     if filter_row <= 13:
+        #         filter_locations = [i for i in range(13 - filter_row, 23 - (13 - filter_row) * 2)]
+        #         if game_state.get_resources(0)[0] > len(filter_locations):
+        #             self.build_defences(filter_locations, FILTER, game_state, filter_row)
+        #             game_state.attempt_spawn(EMP, [launch_pos], 2)
+        #     else:
+        #         # print("check ", game_state.get_resources(0)[0])
+        #         if game_state.get_resources(0)[0] > 6:
+        #             game_state.attempt_spawn(PING, [launch_pos], 15)
+        #
+        # if game_state.turn_number >= 4 and game_state.get_resources(0)[1] > 8:
+        #     encrpytor_locations = [[launch_pos[0] + 1 + k, launch_pos[1] - 1] for k in range(3)]
+        #     game_state.attempt_spawn(ENCRYPTOR, encrpytor_locations)
         game_state.submit_turn()
 
 

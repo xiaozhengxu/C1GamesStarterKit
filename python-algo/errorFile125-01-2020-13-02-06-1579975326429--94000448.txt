@@ -1,0 +1,4 @@
+  File "/mnt/c/Users/Leon/Desktop/terminal/C1GamesStarterKit/python-algo/algo_strategy.py", line 53
+    f = open("C:\Users\Leon\Desktop\terminal\C1GamesStarterKit\python-algo\weights.txt", "r")
+            ^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
