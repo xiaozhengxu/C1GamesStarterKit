@@ -68,63 +68,65 @@ class AlgoStrategy(gamelib.AlgoCore):
     """
 
     def starter_strategy(self, game_state):
-        """Imitating Madroxfactor4 boss
-        """
         # First, place base defenses
-        if game_state.turn_number >= 0: #If already there, rebuild destroyed defenses
+        if game_state.turn_number == 0: #If already there, rebuild destroyed defenses
             row = 13
             destructor_locations = [2,3,10,17,24,25]
             self.build_defences(destructor_locations, DESTRUCTOR, game_state, row = row)
-        # Filters and additional defenses:
-        if game_state.turn_number >= 4:
-            #Calculate the filters so EMP is 4 or 5 away from enemy destructor, but not in range of destructor
-            filter_row = self.get_enemy_front_row(game_state, DESTRUCTOR) - 3
-            #filter_locations = [5,6,7,8,9,11,12,13,14,15,16,18,19,20,21,22,23, 26, 27] #19 filters in total
-            filter_locations = [i for i in range(13-filter_row, 23 - (13-filter_row)*2)]
-            self.build_defences(filter_locations, FILTER, game_state, row = filter_row)
-            #game_state.attempt_upgrade(destructor_locations)
-            encryptor_locations = [5,6]
-            encryptor_row = 8
-            self.build_defences(encryptor_locations, ENCRYPTOR, game_state, row = encryptor_row)
-            if filter_row == 13:
-                additional_filters_locations = [26, 27]
-                self.build_defences(additional_filters_locations, FILTER, game_state, filter_row)
-
-            for location in self.scored_on_locations:
-                #Build destructor one space above so that it doesn't block our own edge spawn locations
-                if location[0] >= 14:
-                    build_locations = [[location[0] - 2, location[1]+2], [location[0] - 1, location[1]+1], [location[0]-1, location[1]]]
-                    build_locations = [[location[0] - 2, location[1]+2], [location[0] - 1, location[1]+1], [location[0]-1, location[1]]]
-                else:
-                    build_locations = [[location[0] + 2, location[1]+2], [location[0] + 1, location[1]+1], [location[0]+1, location[1]]]
-
-                game_state.attempt_spawn(DESTRUCTOR, build_locations, 1)
-                game_state.attempt_spawn(SCRAMBLER, location)
-
-            additional_destructor_locations = [[25,12],[2,12],[3,11], [1,12], [24, 11], [23, 11], [10, 11], [21,8],
-                                               [17,11], [12,9], [15,9], [12,6], [15,6]]
-            additional_encryptor_locations = [[7,8], [3,10],[4,10], [5, 10], [6,10]]
-            for j in range(len(additional_encryptor_locations)):
-                self.build_defences([additional_destructor_locations[j]], DESTRUCTOR, game_state)
-                self.build_defences([additional_encryptor_locations[j]], ENCRYPTOR, game_state)
-            #Build as much as remaining destructors as possible
-            self.build_defences([additional_destructor_locations], DESTRUCTOR, game_state)
-        #encryptor at [24,10]
-
+        # Calculate the filters so EMP is 4 or 5 away from enemy destructor, but not in range of destructor
+        filter_row = self.get_enemy_front_row(game_state, DESTRUCTOR) - 3
         #Attack:
         if game_state.turn_number >= 4:
             if filter_row <= 13:
                 game_state.attempt_spawn(EMP, [4, 9], 10)
-        if game_state.get_resources(0)[0] > 6:
-            ping_spawn_location_options = [[4, 9], [6, 7]]
-            best_location = self.least_damage_spawn_location(game_state, ping_spawn_location_options)
-            game_state.attempt_spawn(PING, best_location, 15)
+        if game_state.get_resources(0)[0] > 8:
+            random_edge_locs = [[i, 13 - i] for i in range(0, 14)] + [[i, i - 14] for i in range(14, 27)]
+            ping_spawn_location_options = self.filter_blocked_locations(random_edge_locs, game_state)
+            ping_location = self.least_damage_spawn_location(game_state, ping_spawn_location_options)
+            game_state.attempt_spawn(PING, ping_location, 15)
+            game_state.attempt_spawn([[ping_location[0] + 1, ping_location[0] + 1],
+                                      [ping_location[0] - 1, ping_location[0] + 1]], ENCRYPTOR, 1)
+        if len(self.scored_on_locations):
+            game_state.attempt_spawn(SCRAMBLER, [self.scored_on_locations[-1]], 3)
+
+        # Filters and additional defenses:
+        if game_state.turn_number >= 4:
+            # filter_locations = [5,6,7,8,9,11,12,13,14,15,16,18,19,20,21,22,23, 26, 27] #19 filters in total
+            filter_locations = [i for i in range(13 - filter_row, 23 - (13 - filter_row) * 2)]
+            self.build_defences(filter_locations, FILTER, game_state, row=filter_row)
+            # game_state.attempt_upgrade(destructor_locations)
+            if filter_row == 13:
+                additional_filters_locations = [26, 27]
+                self.build_defences(additional_filters_locations, FILTER, game_state, filter_row)
+            for location in self.scored_on_locations:
+                # Build destructor one space above so that it doesn't block our own edge spawn locations
+                if location[0] >= 14:
+                    build_locations = [[location[0] - 2, location[1] + 2], [location[0] - 1, location[1] + 1],
+                                       [location[0] - 1, location[1]]]
+                    build_locations = [[location[0] - 2, location[1] + 2], [location[0] - 1, location[1] + 1],
+                                       [location[0] - 1, location[1]]]
+                else:
+                    build_locations = [[location[0] + 2, location[1] + 2], [location[0] + 1, location[1] + 1],
+                                       [location[0] + 1, location[1]]]
+
+                game_state.attempt_spawn(DESTRUCTOR, build_locations, 1)
+
+            additional_destructor_locations = [[25, 12], [2, 12], [3, 11], [1, 12], [24, 11], [23, 11], [10, 11],
+                                               [21, 8],
+                                               [17, 11], [12, 9], [15, 9], [12, 6], [15, 6]]
+            additional_encryptor_locations = [[7, 8], [3, 10], [4, 10], [5, 10], [6, 10]]
+            for j in range(len(additional_encryptor_locations)):
+                self.build_defences([additional_destructor_locations[j]], DESTRUCTOR, game_state)
+                self.build_defences([additional_encryptor_locations[j]], ENCRYPTOR, game_state)
+            # Build as much as remaining destructors as possible
+            self.build_defences([additional_destructor_locations], DESTRUCTOR, game_state)
+        # encryptor at [24,10]
 
 
     def get_enemy_front_row(self, game_state, unit_type = None):
         front_row = 17
         for row in range(14, 16):
-            for col in range(2 + row-14, 27 - 2 - (row-14)):
+            for col in range(4 + row-14, 27 - 4 - (row-14)):
                 if game_state.contains_stationary_unit([col, row]):
                     for unit in game_state.game_map[col, row]:
                         if unit.player_index == 1 \
@@ -212,7 +214,10 @@ class AlgoStrategy(gamelib.AlgoCore):
             for path_location in path:
                 # Get number of enemy destructors that can attack the final location and multiply by destructor damage
                 damage += len(game_state.get_attackers(path_location, 0)) * gamelib.GameUnit(DESTRUCTOR, game_state.config).damage_i
-            damages.append(damage)
+            if path[-1][1] >= 14:
+                damages.append(damage)
+            else:
+                damages.append(1e7)
 
         # Now just return the location that takes the least damage
         return location_options[damages.index(min(damages))]
